@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Rad sa artiklima</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./main.css"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Unesite novi prozivod</h3>
+            <form id="product-form" class="form-horizontal" novalidate>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Naziv</label>
+                    <div class="col-sm-6">
+                        <input id="name" name="name" type="text" class="form-control" placeholder="Unesite naziv prozivoda" data-validate="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="barcode" class="col-sm-2 control-label">Bar kod</label>
+                    <div class="col-sm-6">
+                        <input id="barcode" name="barcode" type="number" class="form-control" placeholder="Unesite bar kod prozivoda" data-validate="required,number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="kind" class="col-sm-2 control-label">Vrsta artikla</label>
+                    <div class="col-sm-6">
+                        <select id="kind" name="kind" class="form-control" data-validate="required">
+                            <option selected disabled>Izaberite vrstu</option>
+                            <option value="Papirna galanterija">Papirna galanterija</option>
+                            <option value="Vlazne maramice">Vlazne maramice</option>
+                            <option value="Kozmetika">Kozmetika</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-sm-2 control-label">Opis</label>
+                    <div class="col-sm-6">
+                        <textarea id="description" name="description" maxlength="200" rows="6" class="form-control" placeholder="Unesite naziv prozivoda"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="col-sm-2 control-label">Cena artikla</label>
+                    <div class="col-sm-2">
+                        <input id="price" name="price" type="number" class="form-control" placeholder="Unesite cenu prozivoda">
+                    </div>
+                    <label for="total" class="col-sm-2 control-label">Cena sa PDV-om</label>
+                    <div class="col-sm-2">
+                        <input id="total" name="total" type="text" disabled class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="files" class="col-sm-2 control-label">Slika proizvoda</label>
+                    <div class="col-sm-2">
+                        <input id="files" name="file" type="file" class="form-control" placeholder="Dodaj sliku prozivoda" data-validate="png">
+                    </div>
+                    <div class="col-sm-4" id="preview">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <input type="submit" class="btn btn-primary" value="Sacuvaj">
+                    </div>
+                </div>
+            </form>
+
+            <h3 class="table-header">Rad sa artiklima</h3>
+            <input type="text" class="search-field" placeholder="Ukucajte naziv artikla" />
+            <div class="table-responsive" >
+                <table id="products-table"  class="table table-striped" >
+                    <thead>
+                        <tr class="header">
+                            <th>Naziv</th>
+                            <th>Bar-kod</th>
+                            <th>Opis artikla</th>
+                            <th>Vrsta artikla</th>
+                            <th>Osnovna cena</th>
+                            <th>Cena sa PDV-om</th>
+                            <th>Slika</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="alerts">
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./app.js"></script>
+    </body>
+</html>
